@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class farmacia extends Model
+class Farmacia extends Model
 {
-    protected $table = "gatos";
+    protected $table = "farmacias";
 
     // Indica os campos que podem ser preenchidos pelo usuário
     protected $fillable = [
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        ''
+        'nome',
+        'idade',
+        'cpf',
+        'sexo',
+        'altura',
+        'peso',
+        'foto'
     ];
 }

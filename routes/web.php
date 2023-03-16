@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FarmaciaController;
+use App\Models\Farmacia;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+    Route::get('/farmacias', [FarmaciaController::class, 'index'])->name('farmacia.index');
+
+    Route::get('/farmacias', [FarmaciaController::class, 'create'])->name('farmacia.create');
+
+    Route::get('/farmacias/{id}', [FarmaciaController::class, 'show'])->name('farmacia.show');
+
+    Route::get('/Farmacia/{id}/edit',[FarmaciaController::class, 'edit'])->name('farmacia.edit');
+
+    Route::post('/Farmacia',[FarmaciaController::class, 'store'])->name('farmacia.store');
+
+    Route::put('Farmacia/{id}',[FarmaciaController::class, 'update'])->name('farmacia.update');
+
+    Route::delete('Farmacia/{id}',[FarmaciaController::class, 'delete'])->name('farmacia.delete');
