@@ -23,12 +23,12 @@ Route::get('/', function () {
 
     Route::get('/farmacias', [FarmaciaController::class, 'create'])->name('farmacia.create');
 
-    Route::get('/farmacias/{id}', [FarmaciaController::class, 'show'])->name('farmacia.show');
+    //Route::get('/farmacias/{id}', [FarmaciaController::class, 'show'])->name('farmacia.show');
 
-    Route::get('/Farmacia/{id}/edit',[FarmaciaController::class, 'edit'])->name('farmacia.edit');
+   // Route::get('/Farmacia/{id}/edit',[FarmaciaController::class, 'edit'])->name('farmacia.edit');
 
     Route::post('/Farmacia',[FarmaciaController::class, 'store'])->name('farmacia.store');
 
-    Route::put('Farmacia/{id}',[FarmaciaController::class, 'update'])->name('farmacia.update');
+    //Route::put('Farmacia/{id}',[FarmaciaController::class, 'update'])->name('farmacia.update');
 
-    Route::delete('Farmacia/{id}',[FarmaciaController::class, 'delete'])->name('farmacia.delete');
+    //Route::delete('Farmacia/{id}',[FarmaciaController::class, 'delete'])->name('farmacia.delete');

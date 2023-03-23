@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Farmacia extends Model
 {
+    use HasFactory;
     protected $table = "farmacias";
 
-    // Indica os campos que podem ser preenchidos pelo usuário
+
     protected $fillable = [
         'nome',
         'idade',
