@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gatos', function (Blueprint $table) {
+        Schema::create('farmacias', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->string('idade');
-            $table->integer('cpf');
+            $table->string('cpf', 15);
             $table->string('sexo');
             $table->string('altura');
             $table->text('peso');
-            $table->string('foto')->nullable()->default('');
+
 
             $table->timestamps();
         });

@@ -12,7 +12,7 @@
         <div class="container">
             <h1>Lista de Farmacias</h1>
 
-            <a class="btn btn-outline-success my-2" href="{{ route('farmacia.create') }}">Novo Farmacia</a>
+            <a class="btn btn-outline-success my-2" href="{{ route('farmacias.create') }}">Novo Farmacia</a>
 
             <table class="table table-hover table-bordered table-primary">
                 <tr class="table-dark">
@@ -34,6 +34,11 @@
                         <td>{{ $farmacia->altura }}</td>
                         <td>{{ $farmacia->peso }}</td>
                     </tr>
+                    <td>
+                    <a class="link" href="{{ route('farmacias.show', $farmacia->id) }}">
+                        Ver
+                    </a>
+                    </td>
                 @endforeach
             </table>
         </div>

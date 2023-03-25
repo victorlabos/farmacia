@@ -12,7 +12,7 @@
         <div class="container mb-3">
             <h1>Nova farmacia</h1>
 
-            <form method="POST" action="{{ route('farmacia.store') }}">
+            <form method="POST" action="{{ route('farmacias.store') }}">
              @csrf
 
              <div class="mb-3">
@@ -27,7 +27,7 @@
 
             <div class="mb-3">
                 <label>Cpf</label>
-                <input type="number" name="cpf" class="form-control">
+                <input type="text" name="cpf" class="form-control">
             </div>
 
             <div class="mb-3">
@@ -41,14 +41,14 @@
 
             <div class="mb-3">
                 <label>Altura</label>
-                <input type="number" name="altura" class="form-control">
+                <input type="decimal" name="altura" class="form-control">
             </div>
 
             <div class="mb-3">
                 <label>Peso</label>
-                <input type="number" name="peso" class="form-control">
+                <input type="decimal" name="peso" class="form-control">
             </div>
 
             <div>
-                <input type="submit" value="Salvar Gato" class="btn btn-primary">
+                <input type="submit" value="Salvar farmacia" class="btn btn-primary">
             </div>

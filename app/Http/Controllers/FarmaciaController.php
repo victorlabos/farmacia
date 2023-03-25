@@ -9,16 +9,16 @@ class FarmaciaController extends Controller
 {
     public function index()
     {
-    $farmacias = Farmacia::all();
+        $farmacias = Farmacia::all();
 
-    return view('farmacia.index', compact('farmacias'));
+        return view('farmacias.index', compact('farmacias'));
     }
 
     public function create()
 
     {
 
-        return view ('farmacia.create');
+        return view ('farmacias.create');
 
     }
 
@@ -39,8 +39,32 @@ class FarmaciaController extends Controller
 }
 
     public function show(Farmacia $farmacia)
-{
-        return view('farmacias.show', compact('farmacia'));
-}
+        {
+            return view('farmacias.show', compact('farmacia'));
+        }
 
-}
+
+        public function edit(Farmacia $farmacia)
+        {
+
+            return view('farmacias.edit', compact('farmacia'));
+        }
+
+
+        public function update(Request $requisicao, Farmacia $farmacia)
+        {
+
+            $farmacia->update($requisicao->all());
+
+
+            return redirect()->route('farmacias.show', $farmacia->id);
+        }
+
+
+        public function destroy(Farmacia $farmacia)
+        {
+            $farmacia->delete();
+
+            return redirect()->route('farmacias.index');
+        }
+    }

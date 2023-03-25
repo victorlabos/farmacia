@@ -19,16 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-    Route::get('/farmacias', [FarmaciaController::class, 'index'])->name('farmacia.index');
+    Route::get('/farmacias', [FarmaciaController::class, 'index'])->name('farmacias.index');
 
-    Route::get('/farmacias', [FarmaciaController::class, 'create'])->name('farmacia.create');
+    Route::get('/farmacias/novo', [FarmaciaController::class, 'create'])->name('farmacias.create');
 
-    //Route::get('/farmacias/{id}', [FarmaciaController::class, 'show'])->name('farmacia.show');
+    Route::get('/farmacias/{farmacia}', [FarmaciaController::class, 'show'])->name('farmacias.show');
 
-   // Route::get('/Farmacia/{id}/edit',[FarmaciaController::class, 'edit'])->name('farmacia.edit');
+    Route::get('/farmacias/{farmacia}/edit',[FarmaciaController::class, 'edit'])->name('farmacias.edit');
 
-    Route::post('/Farmacia',[FarmaciaController::class, 'store'])->name('farmacia.store');
+    Route::post('/farmacias',[FarmaciaController::class, 'store'])->name('farmacias.store');
 
-    //Route::put('Farmacia/{id}',[FarmaciaController::class, 'update'])->name('farmacia.update');
+    Route::put('/farmacias/{farmacia}',[FarmaciaController::class, 'update'])->name('farmacias.update');
 
-    //Route::delete('Farmacia/{id}',[FarmaciaController::class, 'delete'])->name('farmacia.delete');
+    Route::delete('/farmacias/{farmacia}',[FarmaciaController::class, 'destroy'])->name('farmacias.destroy');
